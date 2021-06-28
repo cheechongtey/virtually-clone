@@ -365,7 +365,7 @@ window.onload = () => {
           projectBigNum = document.querySelector(`#${id} .project-big-num`),
           projectSmallNum = document.querySelector(`#${id} .project-small-num`),
           projectName = document.querySelector(`#${id} .project-name`),
-          childNode = document.querySelectorAll(`#${id} > *`),
+          childNode = document.querySelectorAll(`#${id} > .rotate-animate`),
           parentNode = element.parentElement,
           winHalf = containerW / 2,
           adjustedMove = containerH / 15,
@@ -426,17 +426,17 @@ window.onload = () => {
             ease: Power4.easeOut,
           });
 
-          TweenMax.to(projectSmallNum, {
-            css: {
-              transform:
-                "translateX(" +
-                moveX / 32 +
-                "px) translateY(" +
-                moveY / 24 +
-                "px) rotate(-90deg)",
-            },
-            ease: Power4.easeOut,
-          });
+          // TweenMax.to(projectSmallNum, {
+          //   css: {
+          //     transform:
+          //       "translateX(" +
+          //       moveX / 32 +
+          //       "px) translateY(" +
+          //       moveY / 24 +
+          //       "px) rotate(-90deg)",
+          //   },
+          //   ease: Power4.easeOut,
+          // });
         });
       });
     },
