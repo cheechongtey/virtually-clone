@@ -1,0 +1,104 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .curtain {
+        margin: 0 auto;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .curtain__wrapper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .curtain__wrapper input[type="checkbox"] {
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        opacity: 0;
+        top: 0;
+        left: 0;
+      }
+
+      .curtain__wrapper
+        input[type="checkbox"]:checked
+        ~ div.curtain__panel--left {
+        transform: translate(-100%);
+      }
+
+      .curtain__wrapper
+        input[type="checkbox"]:checked
+        ~ div.curtain__panel--right {
+        transform: translate(100%);
+      }
+
+      .curtain__panel {
+        display: flex;
+        align-items: center;
+        background: orange;
+        color: #fff;
+        float: left;
+        position: relative;
+        width: 50%;
+        height: 100vh;
+        z-index: 2;
+      }
+
+      .curtain__panel--left {
+        justify-content: flex-end;
+        transform-origin: 0% 50%;
+        transform: scale(0, 1);
+      }
+
+      .curtain__panel--right {
+        justify-content: flex-start;
+        transform: matrix(0, 0, 0, 1, 0, 0);
+      }
+
+      .curtain__content {
+        align-items: center;
+        background: #333;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        padding: 1rem 0;
+        position: absolute;
+        text-align: center;
+        z-index: 1;
+        width: 100%;
+      }
+
+      .curtain__content img {
+        width: 20%;
+      }
+
+      #button {
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- curtain -->
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+  <script>
+    // window.onload = () => {
+
+    // };
+
+    document.addEventListener("scroll", function () {
+      console.log("saasd");
+    });
+  </script>
+</html>

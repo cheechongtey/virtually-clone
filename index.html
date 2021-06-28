@@ -1,0 +1,519 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clone of We Virtually Are Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.css"
+      integrity="sha512-hGBKkjAVJUXoImyDezOKpzuY4LS1eTvJ4HTC/pbxn47x5zNzGA1vi3vFQhhOehWLTNHdn+2Yqh/IRNPw/8JF/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js"
+      integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">
+        <a class="js-ajaxPage blinkTextHover" href="http://wevirtuallyare.com"
+          >WE VIRTUALLY ARE</a
+        >
+      </h1>
+      <button class="toggleNav" id="toggleNav" aria-pressed="false">
+        <span class="first-toggle"></span>
+        <span class="second-toggle"></span>
+        <span class="third-toggle"></span>
+      </button>
+      <nav id="nav">
+        <div class="navBg" id="navBG">
+          <canvas class="navTVAnim" id="navTVAnim"></canvas>
+          <div id="glitch-border-nav" class="glitch-border-wrap"></div>
+        </div>
+        <div class="vertCentre">
+          <ul class="mainNav">
+            <li class="mainNavBox">
+              <a
+                class="js-ajaxPage glitchTextHover active"
+                href="https://wevirtuallyare.com/"
+                data-text="Home"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li class="mainNavBox">
+              <a
+                class="js-ajaxPage glitchTextHover"
+                href="https://wevirtuallyare.com/about/"
+                data-text="About"
+                >About</a
+              >
+            </li>
+            <li class="mainNavBox">
+              <a
+                class="js-ajaxPage glitchTextHover"
+                href="https://wevirtuallyare.com/stories/"
+                data-text="History"
+                >History</a
+              >
+            </li>
+            <li class="mainNavBox">
+              <a
+                class="js-ajaxPage glitchTextHover"
+                href="https://wevirtuallyare.com/news/"
+                data-text="News"
+                >News</a
+              >
+            </li>
+            <li class="mainNavBox">
+              <a
+                class="js-ajaxPage glitchTextHover"
+                href="https://wevirtuallyare.com/contact/"
+                data-text="Contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <ul class="secondNav" style="visibility: inherit; opacity: 1">
+            <li>
+              <a
+                href="https://www.youtube.com/channel/UCAnHFtbaccMDWvE7-lhX8Zw"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="blinkTextHover"
+                >YOUTUBE</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/wevirtuallyare?lang=en"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="blinkTextHover"
+                >TWITTER</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://vimeo.com/174382529"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="blinkTextHover"
+                >VIMEO</a
+              >
+            </li>
+          </ul>
+        </div>
+        <a
+          href="https://wevirtuallyare.com/index.php?page_id=142"
+          class="js-ajaxPage terms-cond blinkTextHover"
+          style="visibility: inherit; opacity: 1"
+          ><abbr title="terms and conditions">T’S &amp; C’S</abbr></a
+        >
+        <a
+          href="https://herdl.com/"
+          class="designer-url blinkTextHover"
+          target="_blank"
+          rel="noreferrer noopener"
+          style="visibility: inherit; opacity: 1"
+          >DESIGN BY HERDL</a
+        >
+        <p class="copyright">COPYRIGHT 2018</p>
+      </nav>
+    </header>
+
+    <!-- Curtain Wrap Start -->
+    <div class="curtainWrap">
+      <div class="curtain curtainLeft" id="curLeft"></div>
+      <div class="curtain curtainRight" id="curRight"></div>
+    </div>
+    <!-- Curtain Wrap End -->
+
+    <!-- Bottom Nav Start -->
+    <div class="bottom-navigation">
+      <ul class="projectNav" id="projectNav">
+        <li class="projectNav-item slideNav">
+          <a
+            class="projectNav-link js-projectNav-link blinkTextHover"
+            href="#audi-test-drive"
+            data-source="audi-test-drive"
+            >01</a
+          >
+        </li>
+        <li class="projectNav-item slideNav">
+          <a
+            class="projectNav-link js-projectNav-link blinkTextHover"
+            href="#derby-museums"
+            data-source="derby-museums"
+            >02</a
+          >
+        </li>
+        <li class="projectNav-item slideNav">
+          <a
+            class="projectNav-link js-projectNav-link blinkTextHover"
+            href="#oxfam-iraq"
+            data-source="oxfam-iraq"
+            >03</a
+          >
+        </li>
+        <li class="projectNav-item slideNav">
+          <a
+            class="projectNav-link js-projectNav-link blinkTextHover"
+            href="#audi-a8"
+            data-source="audi-a8"
+            >04</a
+          >
+        </li>
+        <li class="projectNav-item slideNav">
+          <a
+            class="projectNav-link js-projectNav-link blinkTextHover"
+            href="#safer-roads-seatbelt"
+            data-source="safer-roads-seatbelt"
+            >05</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Bottom Nav End -->
+
+    <!-- Home Start -->
+    <main class="homeMain" id="main">
+      <!-- Home Section Start -->
+      <section class="section" data-id="home">
+        <div class="slide home-slide" id="home">
+          <div class="home-img" style="visibility: inherit; opacity: 1">
+            <video
+              autoplay="true"
+              muted="true"
+              src="./medias/videos/dust_long.mp4"
+              loop="loop"
+              id="videoURL0"
+              class="selfHostedVideoWrap"
+            ></video>
+            <div id="glitch-border-wrap" class="glitch-border-wrap"></div>
+          </div>
+          <svg
+            class="heroHead goggles"
+            viewBox="0 0 1575 892"
+            xmlns="http://www.w3.org/2000/svg"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            stroke-linecap="round"
+            stroke-miterlimit="1.414"
+          >
+            <path
+              d="M705.488 603.459h-14.812l-11.813-90.375-11.812 90.375h-14.813l19.875-131.25h7.313c5.625 0 6.562 3.562 7.125 7.125l18.937 124.125zM807.859 603.459v-50.25s.375-9.75-4.875-12.375c5.437-1.313 4.875-11.625 4.875-11.625v-40.5c0-9.188-7.5-16.5-16.5-16.5h-24.563v131.25h13.5V547.02h7.125c3.563 0 6.938 2.063 6.938 8.438v48h13.5zm-27.563-69.188v-49.5h7.125c3.563 0 6.938 1.875 6.938 6.75v35.25c0 6-3.375 7.5-6.938 7.5h-7.125zM898.422 590.146v-45.562c0-1.688 1.5-3.188 3.187-3.188h5.625c4.313 0 6.188-1.875 7.125-3.562.563-1.125 2.813-6.563 4.313-9.938h-20.25v-39c0-1.875 1.312-3.187 3.187-3.187h10.875c4.313 0 6.375-2.063 7.125-3.75l4.5-9.75h-35.062a4.101 4.101 0 0 0-4.125 3.75v127.5h30c4.312 0 6.375-1.875 7.312-3.563.563-1.125 2.813-6.375 4.313-9.75h-28.125zM294.334 304.325h-9.5c-2.5 0-3.334 1.5-3.5 2.334l-7.667 64-7.833-49.667h-1.5c-7.667 0-9.667 2.5-10.334 9.333l-5.833 40.334-8-63.834c-.167-.833-.833-2.5-3.667-2.5h-9.166l14.5 116.667h11l8-59.167L269 420.992h11.167l14.167-116.667zM361.004 409.159v-40.5c0-1.5 1.334-2.834 2.834-2.834h5c3.833 0 5.5-1.666 6.333-3.166.5-1 2.5-5.834 3.833-8.834h-18V319.16c0-1.667 1.167-2.834 2.834-2.834h9.666c3.834 0 5.667-1.833 6.334-3.333l4-8.667H352.67c-2 0-3.5 1.5-3.667 3.334v113.333h26.667c3.833 0 5.667-1.667 6.5-3.167.5-1 2.5-5.666 3.833-8.666h-25zM585.013 304.325h-12l-11.833 77.667-11.167-73.167c-.667-3.833-2.667-4.5-3.5-4.5h-9.17l16.67 108.5c.167 1 1.167 8.167 7.167 8.167h6l17.833-116.667zM645.513 304.325v114.167c.167.833.667 2.5 3.5 2.5h8.5v-112c0-2-1.333-4.667-4.833-4.667h-7.167zM761.18 420.992v-44.667s.333-8.666-4.334-11c4.834-1.166 4.334-10.333 4.334-10.333v-36c0-8.167-6.667-14.667-14.667-14.667H724.68v116.667h12v-50.167h6.333c3.167 0 6.167 1.834 6.167 7.5v42.667h12zm-24.5-61.5v-44h6.333c3.167 0 6.167 1.667 6.167 6v31.333c0 5.334-3 6.667-6.167 6.667h-6.333zM866.684 304.325h-47.67c-2 0-3.668 1.667-3.668 3.667v8.167h16.834v102.333c0 .833.5 2.504 3.333 2.504h8.5V318.992c.167-1.5 1.334-2.833 3-2.833h9.338c3.833 0 5.666-1.667 6.333-3.167l4-8.667zM954.017 304.325h-12V405.16c0 3.5-2.837 6.333-6.337 6.333h-1.833c-3.5 0-6.167-2.833-6.167-6.333V304.325h-8.5c-1.833 0-3.333 1.5-3.5 3.334v99.666c0 8.167 6.667 14.338 14.833 14.338h9.171v-.167c7.833-.166 14.333-6.17 14.333-14.17v-103zM1055.188 420.996h-13.166l-10.505-80.337-10.5 80.337h-13.166l17.666-116.67h6.5c5 0 5.834 3.166 6.334 6.333l16.837 110.337zM1125.355 409.159V307.992c0-2-1.667-3.5-3.667-3.667h-8.333v116.671h28.667c3.833 0 5.666-1.666 6.5-3.166.5-1.005 2.5-5.671 3.833-8.671h-27zM1217.026 409.159V307.992c0-2-1.667-3.5-3.667-3.667h-8.333v116.671h28.667c3.833 0 5.666-1.666 6.5-3.166.5-1 2.5-5.671 3.833-8.671h-27zM1327.693 304.325h-8.834c-.333 0-3.333.167-3.833 4l-7.667 44.167-7.666-44.167c-.5-3.833-3.5-4-3.834-4h-8.833l14.333 68.167v45.004c.167 2 1.667 3.5 3.5 3.5h8.5v-48.504l14.334-68.167z"
+              fill="#fff"
+              fill-rule="nonzero"
+            ></path>
+            <path
+              d="M5.133 623.342C-.417 504.81 19.708 258.054 19.708 258.054s-7.166-150.47 147.467-191.208C321.813 26.1 844.98-47.975 1402.41 67.77c0 0 142.263 30.083 155.55 189.82 13.9 167.134 12.05 366.68 12.05 366.68s9.705 91.134-124.083 166.671c-136.112 76.855-179.633 84.259-179.633 84.259s-65.742 25.004-175.934 3.708c-110.187-21.296-292.6-87.042-599.096-1.85 0 0-104.321 22.6-189.592-5.096-81.254-26.391-142.33-52.158-183.338-73.612-37.862-19.813-109.675-65.555-113.2-175.009z"
+              fill="none"
+              stroke="#fff"
+              stroke-width="8.33334"
+            ></path>
+          </svg>
+          <hr class="homeHR homeHRLeft" aria-hidden="true" />
+          <hr class="homeHR homeHRRight" aria-hidden="true" />
+          <div class="homeViewAllProjs">
+            <a class="js-projectNav-link blinkTextHover" href="#audi-test-drive"
+              >VIEW PROJECTS</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Home Section End -->
+
+      <!-- First Project Start -->
+      <section class="section" data-id="audi-test-drive">
+        <div
+          id="audi-test-drive"
+          class="slide right-wrap"
+          data-sec-url="audi-test-drive"
+          data-sec-title="Audi Test Drive"
+        >
+          <div class="project-wrap" id="project-wrap-1">
+            <div class="project-name">Audi RS</div>
+            <div class="project-big-num">01</div>
+            <figure class="home-img">
+              <div class="YouTubeVideoWrap">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/w_PCRv0WMJ4"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div id="glitch-border-wrap2" class="glitch-border-wrap"></div>
+            </figure>
+            <div class="projListTextWrap">
+              <div class="projectNum" aria-hidden="true">PROJECT 01</div>
+              <div class="projNum projNumInside" aria-hidden="true">01//</div>
+              <h1 class="projName">‐ Audi Test Drive</h1>
+              <p class="projTextDesc">
+                'TEST DRIVE'-Feel the power of the Audi RS and listen to the
+                experts discuss the cars unique features as we take a test drive
+                around a race circuit.
+              </p>
+              <a
+                class="projListViewProj glitchTextHover"
+                href="https://wevirtuallyare.com/projects/audi-test-drive/"
+                data-text="View Project"
+                >View Project</a
+              >
+              <p class="copyright">COPYRIGHT 2018</p>
+            </div>
+            <div
+              class="project-small-num"
+              aria-hidden="true"
+              style="visibility: inherit; opacity: 1"
+            >
+              PROJECT 01
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- First Project End -->
+
+      <!-- Second Project Start -->
+      <section class="section" data-id="derby-museums">
+        <div
+          id="derby-museums"
+          class="slide left-wrap"
+          data-sec-url="audi-test-drive"
+          data-sec-title="Inside Derby Museums"
+        >
+          <div class="project-wrap" id="project-wrap-2">
+            <div class="project-name">Inside Deby Museums</div>
+            <div class="project-big-num">02</div>
+            <figure class="home-img">
+              <div class="YouTubeVideoWrap">
+                <iframe
+                  id="videoURL1"
+                  frameborder="0"
+                  allowfullscreen="1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  title="YouTube video player"
+                  width="640"
+                  height="360"
+                  src="https://www.youtube.com/embed/wHbInq5z5Bw?showinfo=0&controls=0&modestbranding=1&mute=1&rel=0&enablejsapi=1&origin=https%3A%2F%2Fwevirtuallyare.com&widgetid=2"
+                ></iframe>
+              </div>
+              <div id="glitch-border-wrap3" class="glitch-border-wrap"></div>
+            </figure>
+            <div class="projListTextWrap">
+              <div class="projectNum" aria-hidden="true">PROJECT 02</div>
+              <div class="projNum projNumInside" aria-hidden="true">02//</div>
+              <h1 class="projName">‐ Inside Derby Museums</h1>
+              <p class="projTextDesc">
+                'Travel behind the scenes at Derby Museums through virtual
+                reality'-One of a series of immersive, 360 films offering unique
+                access to the inner workings of Derby Museums 'Silk Mill'.
+              </p>
+              <a
+                class="projListViewProj glitchTextHover"
+                href="https://wevirtuallyare.com/projects/audi-test-drive/"
+                data-text="View Project"
+                >View Project</a
+              >
+              <p class="copyright">COPYRIGHT 2018</p>
+            </div>
+            <div
+              class="project-small-num"
+              aria-hidden="true"
+              style="visibility: inherit; opacity: 1"
+            >
+              PROJECT 02
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Second Project End -->
+
+      <!-- Third Project Start -->
+      <section class="section" data-id="oxfam-iraq">
+        <div
+          id="oxfam-iraq"
+          class="slide right-wrap"
+          data-sec-url="oxfam-iraq"
+          data-sec-title="OXFAM - IRAQ"
+        >
+          <div class="project-wrap" id="project-wrap-3">
+            <div class="project-name">OXFAM - IRAQ</div>
+            <div class="project-big-num">03</div>
+            <figure class="home-img">
+              <div class="YouTubeVideoWrap">
+                <iframe
+                  id="videoURL1"
+                  frameborder="0"
+                  allowfullscreen="1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  title="YouTube video player"
+                  width="640"
+                  height="360"
+                  src="https://www.youtube.com/embed/NYCMDRhWh4Y?showinfo=0&controls=0&modestbranding=1&mute=1&rel=0&enablejsapi=1&origin=https%3A%2F%2Fwevirtuallyare.com&widgetid=3"
+                ></iframe>
+              </div>
+              <div id="glitch-border-wrap4" class="glitch-border-wrap"></div>
+            </figure>
+            <div class="projListTextWrap">
+              <div class="projectNum" aria-hidden="true">PROJECT 03</div>
+              <div class="projNum projNumInside" aria-hidden="true">03//</div>
+              <h1 class="projName">‐ OXFAM – ‘Layla Comes Home’</h1>
+              <p class="projTextDesc">
+                'Experience what life is like after war through the power of
+                virtual reality.'-'Layla comes home' was produced for Oxfam as
+                part of an immersive street funding campaign.
+              </p>
+              <a
+                class="projListViewProj glitchTextHover"
+                href="https://wevirtuallyare.com/projects/audi-test-drive/"
+                data-text="View Project"
+                >View Project</a
+              >
+              <p class="copyright">COPYRIGHT 2018</p>
+            </div>
+            <div
+              class="project-small-num"
+              aria-hidden="true"
+              style="visibility: inherit; opacity: 1"
+            >
+              PROJECT 03
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Third Project End -->
+
+      <!-- Fourth Project Start -->
+      <section class="section" data-id="audi-a8">
+        <div
+          id="audi-a8"
+          class="slide left-wrap"
+          data-sec-url="audi-a8"
+          data-sec-title="Test Drive The Audi A8"
+        >
+          <div class="project-wrap" id="project-wrap-4">
+            <div class="project-name">AUDI A8</div>
+            <div class="project-big-num">04</div>
+            <figure class="home-img">
+              <div class="YouTubeVideoWrap">
+                <iframe
+                  id="videoURL1"
+                  frameborder="0"
+                  allowfullscreen="1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  title="YouTube video player"
+                  width="640"
+                  height="360"
+                  src="https://www.youtube.com/embed/x4gLvSXiaKU?showinfo=0&controls=0&modestbranding=1&mute=1&rel=0&enablejsapi=1&origin=https%3A%2F%2Fwevirtuallyare.com&widgetid=4"
+                ></iframe>
+              </div>
+              <div id="glitch-border-wrap5" class="glitch-border-wrap"></div>
+            </figure>
+            <div class="projListTextWrap">
+              <div class="projectNum" aria-hidden="true">PROJECT 04</div>
+              <div class="projNum projNumInside" aria-hidden="true">04//</div>
+              <h1 class="projName">‐ Test Drive The Audi A8</h1>
+              <p class="projTextDesc">
+                'Take a drive in virtual reality in the company of actors Matt
+                Smith & Dominic Cooper'-A 360, virtual reality experience
+                showcasing the new AUDI A8 as we take a tour of some of the cars
+                unique features.
+              </p>
+              <a
+                class="projListViewProj glitchTextHover"
+                href="https://wevirtuallyare.com/projects/audi-test-drive/"
+                data-text="View Project"
+                >View Project</a
+              >
+              <p class="copyright">COPYRIGHT 2018</p>
+            </div>
+            <div
+              class="project-small-num"
+              aria-hidden="true"
+              style="visibility: inherit; opacity: 1"
+            >
+              PROJECT 04
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Fourth Project End -->
+
+      <!-- Fifth Project Start -->
+      <section class="section" data-id="safer-roads-seatbelt">
+        <div
+          id="safer-roads-seatbelt"
+          class="slide right-wrap"
+          data-sec-url="safer-roads-seatbelt"
+          data-sec-title="Safer Roads - Seatbelt"
+        >
+          <div class="project-wrap" id="project-wrap-5">
+            <div class="project-name">Safer Roads - Seatbelt</div>
+            <div class="project-big-num">05</div>
+            <figure class="home-img">
+              <div class="YouTubeVideoWrap">
+                <iframe
+                  id="videoURL1"
+                  frameborder="0"
+                  allowfullscreen="1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  title="YouTube video player"
+                  width="640"
+                  height="360"
+                  src="https://www.youtube.com/embed/Cs1Bh5swX_Q?showinfo=0&controls=0&modestbranding=1&mute=1&rel=0&enablejsapi=1&origin=https%3A%2F%2Fwevirtuallyare.com&widgetid=5"
+                ></iframe>
+              </div>
+              <div id="glitch-border-wrap6" class="glitch-border-wrap"></div>
+            </figure>
+            <div class="projListTextWrap">
+              <div class="projectNum" aria-hidden="true">PROJECT 05</div>
+              <div class="projNum projNumInside" aria-hidden="true">05//</div>
+              <h1 class="projName">‐ Safer Roads – Seatbelt</h1>
+              <p class="projTextDesc">
+                'Safer Roads - Seatbelt'-A 360, virtual reality experience
+                focusing on road safety. As a new driver, getting behind the
+                wheel for the first time is the most perilous of all.
+                Particularly when anything can happen.
+              </p>
+              <a
+                class="projListViewProj glitchTextHover"
+                href="https://wevirtuallyare.com/projects/audi-test-drive/"
+                data-text="View Project"
+                >View Project</a
+              >
+              <p class="copyright">COPYRIGHT 2018</p>
+            </div>
+            <div
+              class="project-small-num"
+              aria-hidden="true"
+              style="visibility: inherit; opacity: 1"
+            >
+              PROJECT 05
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Fifth Project End -->
+    </main>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.0/svg.min.js"
+    integrity="sha512-RUC8QNj6IGTOnZkzc/T+oSwFpNkVAVwW+ZRBkjJ3JWgOt12bBoWqddzPOMao2iTsvaWDox58rkjo20RvbH/4Mw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="main.js"></script>
+  <script src="home.js"></script>
+</html>

@@ -1,0 +1,1214 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary_color: #181818;
+  --secondary_color: #ffffff;
+  --text_color: #ffffff;
+  --normal_line-height: 1.2;
+  --normal_letter-spacing: 1em;
+  --normal_font-size: 16px;
+  --nav_small-font-size: 10px;
+  --section_font-size: 0.75vw;
+  --font-family: Inconsolata, monospace;
+}
+
+html {
+  background: var(--primary_color);
+  color: var(--text_color);
+  font-size: var(--normal_font-size);
+  font-family: var(--font-family);
+}
+
+a,
+abbr {
+  text-decoration: none;
+  color: var(--text_color);
+}
+
+ul {
+  list-style: none;
+}
+
+#main {
+  transition-delay: 250ms !important;
+}
+
+.logo,
+.homeViewAllProjs,
+.terms-cond,
+.designer-url,
+.copyright,
+.project-small-num,
+.project-name  {
+  font-size: 0.75vw;
+  font-family: Inconsolata, monospace;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 1em;
+}
+
+.projectNav {
+  position: fixed;
+  z-index: 11;
+  bottom: 0.6rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 12px;
+  transform: translateY(100px);
+}
+
+.projectNav-item {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+
+.projectNav-link {
+  font: inherit;
+  color: inherit;
+  display: block;
+  position: relative;
+  font-family: Inconsolata, monospace;
+  text-transform: uppercase;
+  padding: 0 2vw;
+}
+
+.projectNav-link.active{
+    cursor: default;
+}
+
+.projectNav-link::after {
+  content: "";
+  width: 1px;
+  height: 30px;
+  background: #8b8b8b;
+  transform: translateY(-135%);
+  position: absolute;
+  left: 50%;
+}
+
+.projectNav-item:not(:last-child) {
+  display: inline-block;
+  margin-right: 4.6vw;
+}
+
+.projectNav-link.active::before {
+  content: "";
+  width: 3px;
+  height: 10px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  margin-left: -1px;
+  top: -40px;
+  z-index: 2;
+}
+
+.YouTubeVideoWrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.glitch-border-wrap {
+  z-index: 10000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glitch-border-bottom,
+.glitch-border-top {
+  left: 0;
+  top: 0;
+  position: absolute;
+  pointer-events: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-border-bottom {
+  transform: scale(-1);
+}
+
+.toggleNav {
+  z-index: 110;
+  position: fixed;
+  left: 50vw;
+  top: 20px;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+  margin-left: -9px;
+  transform: translateY(-100px);
+  width: 20px;
+}
+
+.toggleNav > span {
+  height: 100%;
+  width: 1px;
+  background: #fff;
+  /* margin-right: 8px; */
+  transition: all 0.2s ease-out;
+  position: absolute;
+}
+
+.first-toggle {
+  left: 0px;
+}
+
+.second-toggle {
+  left: 9px;
+}
+
+.third-toggle {
+  left: 18px;
+}
+
+.toggleNav.change .first-toggle {
+  animation: stick-1-open 1.2s ease-in-out forwards;
+}
+
+.toggleNav.change .second-toggle {
+  animation: stick-2-open 1.2s ease-in-out forwards;
+}
+
+.toggleNav.change .third-toggle {
+  animation: stick-3-open 1.2s ease-in-out forwards;
+}
+
+.toggleNav .first-toggle {
+  animation: stick-1-close 1.2s ease-in-out;
+}
+
+.toggleNav .second-toggle {
+  animation: stick-2-close 1.2s ease-in-out;
+}
+
+.toggleNav .third-toggle {
+  animation: stick-3-close 1.2s ease-in-out;
+}
+
+.toggleNav:hover > .first-toggle {
+  transform: translate(0px, -8px);
+}
+
+.toggleNav:hover > .second-toggle {
+  transform: translate(0px, 8px);
+}
+
+.toggleNav:hover > .third-toggle {
+  transform: translate(0px, -5px);
+}
+
+.logo {
+  position: absolute;
+  z-index: 15;
+  transition: all 200ms linear;
+}
+
+.curtainWrap {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.curtain {
+  width: 50%;
+  height: 100%;
+  background: var(--primary_color);
+  position: absolute;
+  top: 0;
+}
+
+.curtainLeft {
+  left: 0;
+  transform: matrix(0, 0, 0, 1, 0, 0);
+  transform-origin: left center;
+}
+
+.curtainRight {
+  right: 0;
+  transform: matrix(0, 0, 0, 1, 0, 0);
+  transform-origin: right center;
+}
+
+.mainWrap {
+  z-index: 10;
+}
+
+.slide {
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding: 40px;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+.home-slide {
+  background: var(--primary_color);
+}
+
+.home-img {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    left: 40px;
+    bottom: 40px;
+    overflow: hidden;
+  /* width: 100%;
+  height: 100%; */
+}
+
+.home-img video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.heroHead {
+  position: fixed;
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  width: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.homeHR {
+  position: absolute;
+  width: 20%;
+  top: 50%;
+  margin: 3vh 0 0;
+  padding: 0;
+}
+
+.homeHRRight {
+  right: 70px;
+}
+
+.homeHRLeft {
+  left: 70px;
+}
+
+.homeViewAllProjs {
+  position: absolute;
+  bottom: 20%;
+  text-align: center;
+  left: 0;
+  right: 0;
+  transform: translateY(100px);
+}
+
+.homeViewAllProjs::before {
+  content: "";
+  width: 1px;
+  height: 3.674540682vh;
+  background: white;
+  transform: translateY(-142%);
+  position: absolute;
+  left: 50%;
+}
+
+.toggleNav,
+.heroHead,
+.homeHRLeft,
+.homeHRRight,
+.homeViewAllProjs,
+.projectNav,
+.logo,
+.home-img video {
+  opacity: 0;
+  visibility: hidden;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  /* text-align: center; */
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.navBg {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+}
+
+.vertCentre {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 0;
+  right: 0;
+  font-size: 20px;
+}
+
+.navTVAnim {
+  width: 100%;
+  height: 100%;
+  background: var(--primary_color);
+  z-index: 10;
+}
+
+.mainNav {
+  font-size: 5vh;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.65em;
+  position: relative;
+}
+
+.mainNav a {
+  display: inline-block;
+  position: relative;
+  font-size: inherit;
+  margin: 0 -0.6492693111em 0.5em 0;
+  font-weight: 900;
+}
+
+.glitchTextHover.active,
+.glitchTextHover:hover {
+  /* Animation provies a slight random skew. Check bottom of doc
+    for more information on how to random skew. */
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+.glitchTextHover.active::before,
+.glitchTextHover:hover::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  /* Creates an initial clip for our glitch. This works in
+    a typical top,right,bottom,left fashion and creates a mask
+    to only show a certain part of the glitch at a time. */
+  /* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
+    with an alternating animation to keep things fresh. */
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitchTextHover.active::after,
+.glitchTextHover:hover::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+.terms-cond,
+.designer-url,
+.copyright {
+  text-align: center;
+  position: fixed;
+  transition: all 300ms linear;
+}
+
+/* .designer-url {
+  left: 0;
+  right: 0;
+} */
+
+.terms-cond {
+  left: 0;
+  right: 0;
+}
+
+.secondNav {
+  letter-spacing: 0.5em;
+  font-weight: 800;
+  text-align: center;
+  font-size: var(--nav_small-font-size);
+  margin: 10px 0;
+}
+
+.secondNav > li {
+  display: inline-block;
+}
+
+.secondNav > li:not(:last-child) a::after {
+  content: "//";
+  padding: 0 0.5rem;
+}
+
+/* Project Style Start */
+.project-wrap {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  top: 40px;
+}
+
+.right-wrap .home-img{
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.left-wrap .home-img {
+    left: unset;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.projListTextWrap {
+  position: absolute;
+  width: 30%;
+  top: 5vw;
+  padding: 1rem;
+  background: #000;
+  /* transform: translate(0%, -50%); */
+  min-width: 230px;
+  border-radius: .25rem;
+}
+
+.right-wrap .projListTextWrap {
+    right: -3%;
+}
+
+.left-wrap .projListTextWrap {
+    left: -3%;
+}
+
+.projListTextWrap .copyright {
+    position: absolute;
+    transform-origin: right;
+}
+
+.YouTubeVideoWrap iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.projNum {
+  font-size: 10vw;
+  font-weight: 800;
+  letter-spacing: -0.1em;
+  line-height: 0.8;
+  margin-top: 1rem;
+}
+
+.projName {
+  font-size: 2.5vw;
+  margin-bottom: 1vh;
+  font-family: Inconsolata, monospace;
+  text-transform: uppercase;
+}
+
+.projTextDesc {
+    text-transform: uppercase;
+    margin: 6vh 0;
+    letter-spacing: 0.18em;
+    line-height: 1.2;
+    font-size: 1.7vmin;
+    padding-right: 5vw;
+}
+
+.projListViewProj,
+.projWatchFilm,
+.projWatchFilm:hover {
+  font-size: 1em;
+  font-family: Inconsolata, monospace;
+  letter-spacing: 1vw;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 1;
+  padding: 0 0 0.4em 1.1vw;
+  border-bottom: 1em solid #fff;
+  margin: 5vh 0 6vh;
+}
+
+.projListViewProj {
+  width: fit-content;
+  text-align: center;
+}
+
+.projectNum {
+    letter-spacing: 1em;
+    font-size: var(--nav_small-font-size);
+    left: 0;
+    position: absolute;
+    transform: translate(-58%) rotate(-90deg);
+    top: 7rem;
+}
+
+.project-name, .project-small-num  {
+    position: absolute;
+    z-index: 1;
+    font-weight: 800;
+    transition: all 200ms linear;
+}
+
+.project-big-num {
+    position:absolute;
+    z-index: 1;
+    font-size: 35vmin;
+    top: 25%;
+    
+    opacity: 0.1;
+    font-weight: 900;
+}
+
+.right-wrap .project-big-num {
+  left: -3%;
+}
+
+.left-wrap .project-big-num {
+  right: -3%;
+}
+/* Project Style End */
+
+@media (max-width: 767px) {
+    .logo, .designer-url, .terms-cond, .copyright, .homeViewAllProjs, .project-small-num,
+    .project-name {
+        font-size: 10px;
+    }
+
+    .logo {
+        letter-spacing: 0.75em;
+        text-align: center;
+        left: 0;
+        right: 0;
+        top: 80px;
+    }
+
+    .projectNav-item:not(:last-child) {
+        margin-right: 3.8vw;
+    }
+
+    .heroHead {
+        width: 80%;
+    }
+
+    .terms-cond {
+        bottom: 135px;
+    }
+
+    nav .copyright {
+        bottom: 115px;
+        right: 0;
+        left: 0;
+    }
+
+    .designer-url {
+        bottom: 95px;
+    }
+
+    .homeHR {
+        display: none;
+    }
+
+    .projTextDesc {
+        display: none;
+    }
+
+    .projectNum {
+        display: none;
+    }
+
+    .projListTextWrap .copyright {
+        position: absolute;
+        left: 7%;
+        bottom: 5%;
+        transform-origin: right;
+        font-size: 9px;
+    }
+
+    .right-wrap .home-img,
+    .left-wrap .home-img {
+        width: 95%;
+        top: 40px;
+        bottom:40px;
+    }
+
+    .project-big-num {
+        display: none;
+    }
+
+    .right-wrap .project-name{
+        top: 10%;
+        left: 2.5%;
+    }
+    
+    .right-wrap .project-small-num{
+        bottom: 10%;
+        left: 2.5%;
+    }
+    
+    .left-wrap .project-name{
+        top: 10%;
+        right: 2.5%;
+    }
+    
+    .left-wrap .project-small-num{
+        bottom: 10%;
+        right: 2.5%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px){
+    .logo, .designer-url, .terms-cond, .copyright, .homeViewAllProjs, .project-small-num,
+    .project-name {
+        font-size: 9px;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo {
+        transform-origin: left top;
+        transform: rotate(-90deg) translate3d(-100%, 0, 10px);
+        top: 60px;
+        left: 60px;
+    }
+
+    .mainNav {
+        font-size: 6.8vh;
+    }
+
+    .terms-cond {
+        bottom: 130px;
+    }
+
+    nav .copyright {
+        right: -18px;
+        transform: rotate(-90deg);
+        top: 140px;
+    }
+
+    .designer-url {
+        bottom: 70px;
+    }
+
+    .terms-cond,
+    .designer-url,
+    .copyright {
+        letter-spacing: 0.75em;
+    }
+
+    .right-wrap .projListTextWrap{
+        min-width: 350px;
+        padding: 0 1rem;
+        right: 3%;
+        border-radius: 0;
+    }
+
+    .left-wrap .projListTextWrap{
+        min-width: 350px;
+        padding: 0 1rem;
+        left: 3%;
+        border-radius: 0;
+    }
+
+    .projListTextWrap::before {
+        content: "";
+        position: absolute;
+        left: -25px;
+        right: -10px;
+        top: 15px;
+        bottom: 20px;
+        background: #000;
+        padding: 0.5rem;
+        z-index: -1;
+    }
+
+    .projListTextWrap .copyright {
+        transform: rotate(-90deg);
+        position: absolute;
+        right: 2%;
+        top: 45%;
+        transform-origin: right;
+    }
+
+    .projListViewProj {
+        margin: 0 0 8vh;
+    }
+
+    .projNum {
+        margin-top: 2rem;
+    }
+
+    .right-wrap .home-img,
+    .left-wrap .home-img {
+        width: 80%;
+    }
+
+    .right-wrap .project-name{
+        top: 5%;
+        left: 1%;
+        transform-origin: left top;
+        transform: rotate( -90deg) translate3d(-100%, 0, 10px);
+    }
+    
+    .right-wrap .project-small-num{
+        bottom: 5%;
+        left: 1%;
+        transform-origin: left top;
+        transform: rotate(-90deg);
+    }
+    
+    .left-wrap .project-name{
+        top: 8%;
+        right: 2%;
+        transform-origin: top right;
+        transform: rotate(-90deg);
+    }
+    
+    .left-wrap .project-small-num{
+        bottom: 30%;
+        right: 1.3%;
+        transform: rotate(-90deg);
+        transform-origin: bottom right;
+    }
+}
+
+@media (min-width: 1024px) {
+  .terms-cond {
+    right: 13px;
+    transform: rotate(-90deg);
+    top: 115px;
+    left: unset;
+    bottom: unset;
+  }
+
+  nav .copyright {
+    right: -18px;
+    transform: rotate(-90deg);
+    bottom: 160px;
+    top: unset;
+  }
+
+  .designer-url {
+    /* transform: rotate(-90deg);
+    bottom: 175px;
+    left: -36px; */
+    transform-origin: left top;
+    transform: rotate( -90deg );
+    bottom: 65px;
+    left: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+    .designer-url {
+        left: 0;
+        right: 0;
+    }
+}
+
+.blinkTextHover:not(.active):hover {
+  animation: static-blink 0.8s infinite linear alternate-reverse;
+}
+
+@keyframes static-blink {
+  0% {
+    opacity: 1;
+  }
+
+  5% {
+    opacity: 0.3;
+  }
+
+  10% {
+    opacity: 0.1;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0.9;
+  }
+
+  25% {
+    opacity: 0.5;
+  }
+
+  30% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  55% {
+    opacity: 0.2;
+  }
+
+  60% {
+    opacity: 0.5;
+  }
+
+  65% {
+    opacity: 0.8;
+  }
+
+  90% {
+    opacity: 0.2;
+  }
+
+  95% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes stick-1-open {
+  0% {
+    transform: translate(0px, 0px);
+    left: 9px;
+  }
+
+  30% {
+    left: 9px;
+    transform: translate(0px, -100px) rotate(15deg);
+  }
+
+  100% {
+    left: 9px;
+    transform: translate(0px) rotate(45deg);
+  }
+}
+
+@keyframes stick-2-open {
+  0% {
+    transform: translate(0px, 0px);
+    left: 9px;
+  }
+
+  30% {
+    transform: translate(0px, -100px);
+  }
+
+  100% {
+    left: 9px;
+    transform: translate(0px, -40px);
+  }
+}
+
+@keyframes stick-3-open {
+  0% {
+    transform: translate(0px, 0px);
+    left: 9px;
+  }
+
+  30% {
+    left: 9px;
+    transform: translate(0px, -100px) rotate(-15deg);
+  }
+
+  100% {
+    left: 9px;
+    transform: translate(0px) rotate(-45deg);
+  }
+}
+
+@keyframes stick-1-close {
+  0% {
+    left: 9px;
+    transform: translate(0px) rotate(45deg);
+  }
+
+  30% {
+    left: 0px;
+    transform: translate(0px, -100px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes stick-2-close {
+  0% {
+    transform: translate(0px, -40px);
+  }
+
+  30% {
+    transform: translate(0px, -100px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes stick-3-close {
+  0% {
+    left: 9px;
+    transform: translate(0px) rotate(-45deg);
+  }
+
+  30% {
+    left: 18px;
+    transform: translate(0px, -100px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(32px, 9999px, 46px, 0);
+    transform: skew(0.74deg);
+  }
+  5% {
+    clip: rect(91px, 9999px, 62px, 0);
+    transform: skew(0.1deg);
+  }
+  10% {
+    clip: rect(62px, 9999px, 6px, 0);
+    transform: skew(0.18deg);
+  }
+  15% {
+    clip: rect(11px, 9999px, 8px, 0);
+    transform: skew(0.81deg);
+  }
+  20% {
+    clip: rect(61px, 9999px, 14px, 0);
+    transform: skew(0.92deg);
+  }
+  25% {
+    clip: rect(15px, 9999px, 37px, 0);
+    transform: skew(0.57deg);
+  }
+  30% {
+    clip: rect(100px, 9999px, 40px, 0);
+    transform: skew(0.98deg);
+  }
+  35% {
+    clip: rect(37px, 9999px, 38px, 0);
+    transform: skew(0.42deg);
+  }
+  40% {
+    clip: rect(70px, 9999px, 36px, 0);
+    transform: skew(0.22deg);
+  }
+  45% {
+    clip: rect(14px, 9999px, 32px, 0);
+    transform: skew(0.07deg);
+  }
+  50% {
+    clip: rect(47px, 9999px, 84px, 0);
+    transform: skew(0.99deg);
+  }
+  55% {
+    clip: rect(21px, 9999px, 39px, 0);
+    transform: skew(0.4deg);
+  }
+  60% {
+    clip: rect(31px, 9999px, 92px, 0);
+    transform: skew(0.52deg);
+  }
+  65% {
+    clip: rect(18px, 9999px, 5px, 0);
+    transform: skew(0.02deg);
+  }
+  70% {
+    clip: rect(98px, 9999px, 79px, 0);
+    transform: skew(0.55deg);
+  }
+  75% {
+    clip: rect(1px, 9999px, 40px, 0);
+    transform: skew(0.86deg);
+  }
+  80% {
+    clip: rect(63px, 9999px, 58px, 0);
+    transform: skew(0.38deg);
+  }
+  85% {
+    clip: rect(49px, 9999px, 55px, 0);
+    transform: skew(0.85deg);
+  }
+  90% {
+    clip: rect(68px, 9999px, 18px, 0);
+    transform: skew(0.26deg);
+  }
+  95% {
+    clip: rect(94px, 9999px, 34px, 0);
+    transform: skew(0.43deg);
+  }
+  100% {
+    clip: rect(38px, 9999px, 89px, 0);
+    transform: skew(0.36deg);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(28px, 9999px, 30px, 0);
+    transform: skew(0.42deg);
+  }
+  5% {
+    clip: rect(54px, 9999px, 24px, 0);
+    transform: skew(0.45deg);
+  }
+  10% {
+    clip: rect(21px, 9999px, 26px, 0);
+    transform: skew(0.58deg);
+  }
+  15% {
+    clip: rect(32px, 9999px, 57px, 0);
+    transform: skew(0.98deg);
+  }
+  20% {
+    clip: rect(42px, 9999px, 7px, 0);
+    transform: skew(0.36deg);
+  }
+  25% {
+    clip: rect(39px, 9999px, 86px, 0);
+    transform: skew(0.4deg);
+  }
+  30% {
+    clip: rect(51px, 9999px, 83px, 0);
+    transform: skew(0.58deg);
+  }
+  35% {
+    clip: rect(89px, 9999px, 5px, 0);
+    transform: skew(0.53deg);
+  }
+  40% {
+    clip: rect(11px, 9999px, 96px, 0);
+    transform: skew(0.24deg);
+  }
+  45% {
+    clip: rect(4px, 9999px, 51px, 0);
+    transform: skew(0.53deg);
+  }
+  50% {
+    clip: rect(5px, 9999px, 60px, 0);
+    transform: skew(0.34deg);
+  }
+  55% {
+    clip: rect(85px, 9999px, 85px, 0);
+    transform: skew(0.02deg);
+  }
+  60% {
+    clip: rect(50px, 9999px, 27px, 0);
+    transform: skew(0.4deg);
+  }
+  65% {
+    clip: rect(90px, 9999px, 99px, 0);
+    transform: skew(0.27deg);
+  }
+  70% {
+    clip: rect(59px, 9999px, 92px, 0);
+    transform: skew(0.65deg);
+  }
+  75% {
+    clip: rect(56px, 9999px, 4px, 0);
+    transform: skew(0.48deg);
+  }
+  80% {
+    clip: rect(52px, 9999px, 96px, 0);
+    transform: skew(0.16deg);
+  }
+  85% {
+    clip: rect(52px, 9999px, 1px, 0);
+    transform: skew(0.72deg);
+  }
+  90% {
+    clip: rect(38px, 9999px, 16px, 0);
+    transform: skew(0.65deg);
+  }
+  95% {
+    clip: rect(41px, 9999px, 80px, 0);
+    transform: skew(0.97deg);
+  }
+  100% {
+    clip: rect(52px, 9999px, 31px, 0);
+    transform: skew(0.8deg);
+  }
+}
+
+@keyframes glitch-skew {
+  0% {
+    transform: skew(4deg);
+  }
+  10% {
+    transform: skew(-1deg);
+  }
+  20% {
+    transform: skew(4deg);
+  }
+  30% {
+    transform: skew(-3deg);
+  }
+  40% {
+    transform: skew(0deg);
+  }
+  50% {
+    transform: skew(-1deg);
+  }
+  60% {
+    transform: skew(-4deg);
+  }
+  70% {
+    transform: skew(-3deg);
+  }
+  80% {
+    transform: skew(-3deg);
+  }
+  90% {
+    transform: skew(3deg);
+  }
+  100% {
+    transform: skew(-2deg);
+  }
+}
+
