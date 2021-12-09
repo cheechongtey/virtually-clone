@@ -445,7 +445,7 @@ window.onload = () => {
         scrollHorizontally: true,
         sectionSelector: ".section",
         slideSelector: ".section",
-        scrollingSpeed: 600,
+        scrollingSpeed: 1000,
         autoScrolling: true,
         loopTop: true,
         loopBottom: true,
@@ -519,6 +519,18 @@ window.onload = () => {
                   ease: "power4.out",
                   duration: 0.2,
                 });
+
+              gsap.to(
+                [
+                  `#${activeElementId} .project-small-num`,
+                  `#${activeElementId} .project-name`,
+                ],
+                {
+                  visibility: "inherit",
+                  opacity: 0,
+                  duration: 0.1,
+                }
+              );
             }
 
             gsap
@@ -552,8 +564,21 @@ window.onload = () => {
                 opacity: 0.1,
                 x: 0,
                 ease: "power4.out",
-                duration: 0.3,
-              });
+                duration: 0.2,
+              })
+              .fromTo(
+                [`#${dataId} .project-small-num`, `#${dataId} .project-name`],
+                {
+                  visibility: "hidden",
+                  opacity: 0,
+                  duration: 0.1,
+                },
+                {
+                  visibility: "visible",
+                  opacity: 1,
+                  duration: 0.1,
+                }
+              );
           }
         },
       });
